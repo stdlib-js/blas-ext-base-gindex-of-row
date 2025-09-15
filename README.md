@@ -33,7 +33,7 @@ limitations under the License.
 
 [![NPM version][npm-image]][npm-url] [![Build Status][test-image]][test-url] [![Coverage Status][coverage-image]][coverage-url] <!-- [![dependencies][dependencies-image]][dependencies-url] -->
 
-> Return the index of the first row in a input matrix which has the same elements as a provided search vector.
+> Return the index of the first row in an input matrix which has the same elements as a provided search vector.
 
 <section class="installation">
 
@@ -65,7 +65,7 @@ var gindexOfRow = require( '@stdlib/blas-ext-base-gindex-of-row' );
 
 #### gindexOfRow( order, M, N, A, LDA, x, strideX )
 
-Returns the index of the first row in a input matrix which has the same elements as a provided search vector.
+Returns the index of the first row in an input matrix which has the same elements as a provided search vector.
 
 ```javascript
 /*
@@ -123,7 +123,7 @@ var out = gindexOfRow( 'row-major', 3, 2, A1, 2, x1, 1 );
 
 #### gindexOfRow.ndarray( M, N, A, strideA1, strideA2, offsetA, x, strideX, offsetX )
 
-Returns the index of the first row in a input matrix which has the same elements as a provided search vector using alternative indexing semantics.
+Returns the index of the first row in an input matrix which has the same elements as a provided search vector using alternative indexing semantics.
 
 ```javascript
 /*
