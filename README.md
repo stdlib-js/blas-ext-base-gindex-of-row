@@ -42,13 +42,13 @@ limitations under the License.
 ## Usage
 
 ```javascript
-import gindexOfRow from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-gindex-of-row@deno/mod.js';
+import gindexOfRow from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-gindex-of-row@v0.0.0-deno/mod.js';
 ```
 
 You can also import the following named exports from the package:
 
 ```javascript
-import { ndarray } from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-gindex-of-row@deno/mod.js';
+import { ndarray } from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-gindex-of-row@v0.0.0-deno/mod.js';
 ```
 
 #### gindexOfRow( order, M, N, A, LDA, x, strideX )
@@ -183,7 +183,7 @@ var out = gindexOfRow.ndarray( 3, 2, A, 2, 1, 1, x, 1, 1 );
 ```javascript
 import ndarray2array from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-to-array@deno/mod.js';
 import shape2strides from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-shape2strides@deno/mod.js';
-import gindexOfRow from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-gindex-of-row@deno/mod.js';
+import gindexOfRow from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-gindex-of-row@v0.0.0-deno/mod.js';
 
 var shape = [ 3, 3 ];
 var order = 'row-major';
