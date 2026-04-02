@@ -2,6 +2,40 @@
 
 > Package changelog.
 
+<section class="release" id="unreleased">
+
+## Unreleased (2026-04-02)
+
+<section class="commits">
+
+### Commits
+
+<details>
+
+-   [`6c4e286`](https://github.com/stdlib-js/stdlib/commit/6c4e28697eb4881723cfbdcc82b92cbefd75ae05) - **test:** rename fixture directories to kebabcase per project conventions _(by Athan Reines)_
+
+</details>
+
+</section>
+
+<!-- /.commits -->
+
+<section class="contributors">
+
+### Contributors
+
+A total of 1 person contributed to this release. Thank you to this contributor:
+
+-   Athan Reines
+
+</section>
+
+<!-- /.contributors -->
+
+</section>
+
+<!-- /.release -->
+
 <section class="release" id="v0.1.1">
 
 ## 0.1.1 (2026-02-08)
