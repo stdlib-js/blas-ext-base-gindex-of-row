@@ -35,20 +35,42 @@ limitations under the License.
 
 > Return the index of the first row in an input matrix which has the same elements as a provided search vector.
 
+<!-- Section to include introductory text. Make sure to keep an empty line after the intro `section` element and another before the `/section` close. -->
 
+<section class="intro">
+
+</section>
+
+<!-- /.intro -->
+
+<!-- Package usage documentation. -->
+
+<section class="installation">
+
+## Installation
+
+```bash
+npm install @stdlib/blas-ext-base-gindex-of-row
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm`][esm-url] branch (see [README][esm-readme]).
+-   If you are using Deno, visit the [`deno`][deno-url] branch (see [README][deno-readme] for usage intructions).
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd`][umd-url] branch (see [README][umd-readme]).
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+To view installation and usage instructions specific to each branch build, be sure to explicitly navigate to the respective README files on each branch, as linked to above.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
 ```javascript
-import gindexOfRow from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-gindex-of-row@deno/mod.js';
-```
-
-You can also import the following named exports from the package:
-
-```javascript
-import { ndarray } from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-gindex-of-row@deno/mod.js';
+var gindexOfRow = require( '@stdlib/blas-ext-base-gindex-of-row' );
 ```
 
 #### gindexOfRow( order, M, N, A, LDA, x, strideX )
@@ -76,9 +98,9 @@ The function has the following parameters:
 -   **M**: number of rows in `A`.
 -   **N**: number of columns in `A`.
 -   **A**: input matrix as a linear array.
--   **LDA**: stride of the first dimension of `A` (a.k.a., leading dimension of the matrix `A`).
+-   **LDA**: stride length for the first dimension of `A` (a.k.a., leading dimension of the matrix `A`).
 -   **x**: search vector.
--   **strideX**: stride length of `x`.
+-   **strideX**: stride length for `x`.
 
 If the function is unable to find a matching row, the function returns `-1`.
 
@@ -95,7 +117,7 @@ Note that indexing is relative to the first index. To introduce an offset, use [
 <!-- eslint-disable stdlib/capitalized-comments -->
 
 ```javascript
-import Float64Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float64@deno/mod.js';
+var Float64Array = require( '@stdlib/array-float64' );
 
 // Initial arrays:
 var A0 = new Float64Array( [ 9999.0, 1.0, 2.0, 3.0, 4.0, 0.0, 0.0 ] );
@@ -133,11 +155,11 @@ The function has the following parameters:
 -   **M**: number of rows in `A`.
 -   **N**: number of columns in `A`.
 -   **A**: input matrix as a linear array.
--   **strideA1**: stride of the first dimension of `A`.
--   **strideA2**: stride of the second dimension of `A`.
+-   **strideA1**: stride length for the first dimension of `A`.
+-   **strideA2**: stride length for the second dimension of `A`.
 -   **offsetA**: starting index for `A`.
 -   **x**: search vector.
--   **strideX**: stride length of `x`.
+-   **strideX**: stride length for `x`.
 -   **offsetX**: starting index for `x`.
 
 While [`typed array`][mdn-typed-array] views mandate a view offset based on the underlying buffer, offset parameters support indexing semantics based on starting indices. For example,
@@ -161,16 +183,21 @@ var out = gindexOfRow.ndarray( 3, 2, A, 2, 1, 1, x, 1, 1 );
 
 <!-- /.usage -->
 
+<!-- Package usage notes. Make sure to keep an empty line after the `section` element and another before the `/section` close. -->
+
 <section class="notes">
 
 ## Notes
 
--   When searching for a matching row, the function checks for equality using the strict equality operator `===`. As a consequence, `NaN` values are considered distinct, and `-0` and `+0` are considered the same.
+-   If `M <= 0` or `N <= 0`, both functions return `-1`.
+-   When searching for a matching row, the functions check for equality using the strict equality operator `===`. As a consequence, `NaN` values are considered distinct, and `-0` and `+0` are considered the same.
 -   Both functions support array-like objects having getter and setter accessors for array element access (e.g., [`@stdlib/array-base/accessor`][@stdlib/array/base/accessor]).
 
 </section>
 
 <!-- /.notes -->
+
+<!-- Package usage examples. -->
 
 <section class="examples">
 
@@ -181,9 +208,9 @@ var out = gindexOfRow.ndarray( 3, 2, A, 2, 1, 1, x, 1, 1 );
 <!-- eslint no-undef: "error" -->
 
 ```javascript
-import ndarray2array from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-to-array@deno/mod.js';
-import shape2strides from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-shape2strides@deno/mod.js';
-import gindexOfRow from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-gindex-of-row@deno/mod.js';
+var ndarray2array = require( '@stdlib/ndarray-base-to-array' );
+var shape2strides = require( '@stdlib/ndarray-base-shape2strides' );
+var gindexOfRow = require( '@stdlib/blas-ext-base-gindex-of-row' );
 
 var shape = [ 3, 3 ];
 var order = 'row-major';
@@ -203,6 +230,14 @@ console.log( out );
 
 <!-- /.examples -->
 
+<!-- Section to include cited references. If references are included, add a horizontal rule *before* the section. Make sure to keep an empty line after the `section` element and another before the `/section` close. -->
+
+<section class="references">
+
+</section>
+
+<!-- /.references -->
+
 <!-- Section for related `stdlib` packages. Do not manually edit this section, as it is automatically populated. -->
 
 <section class="related">
@@ -220,7 +255,7 @@ console.log( out );
 
 ## Notice
 
-This package is part of [stdlib][stdlib], a standard library with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
+This package is part of [stdlib][stdlib], a standard library for JavaScript and Node.js, with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
 
 For more information on the project, filing bug reports and feature requests, and guidance on how to develop [stdlib][stdlib], see the main project [repository][stdlib].
 
@@ -285,7 +320,7 @@ Copyright &copy; 2016-2026. The Stdlib [Authors][stdlib-authors].
 
 [mdn-typed-array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray
 
-[@stdlib/array/base/accessor]: https://github.com/stdlib-js/array-base-accessor/tree/deno
+[@stdlib/array/base/accessor]: https://github.com/stdlib-js/array-base-accessor
 
 </section>
 
